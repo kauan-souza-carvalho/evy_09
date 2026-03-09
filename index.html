@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Evy</title>
+    <style>
+        /* Configurações Gerais */
+        body {
+            background-color: #ff0000; /* Fundo Vermelho */
+            color: #000000; /* Texto Preto */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Container principal para centralizar tudo */
+        .container {
+            width: 90%;
+            max-width: 500px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Estilo dos textos */
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #ff69b4; /* Detalhe Rosa */
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Estilo dos Botões */
+        .btn {
+            background-color: #ff69b4; /* Botão Rosa */
+            color: #000000; /* Texto Preto */
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+            width: 100%;
+            max-width: 250px;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Animação de entrada */
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Estilo da mensagem final */
+        .final-message {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 30px;
+            color: #000000;
+        }
+
+        .bouquet {
+            font-size: 3rem;
+            margin: 10px 0;
+            display: block;
+        }
+
+        /* Esconder a página 2 inicialmente */
+        #page2 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- PÁGINA 1 -->
+        <div id="page1" class="fade-in">
+            <h1>O que é o dia das mulher?</h1>
+            <p>
+                Dia da mulher é o dia que celebramos a força, determinação e a luta contra o mundo machista. 
+                <br><br>
+                E você mana Evy é pika, te admiro mto garota.
+            </p>
+            <button class="btn" onclick="goToPage2()">Continue</button>
+        </div>
+
+        <!-- PÁGINA 2 -->
+        <div id="page2" class="fade-in">
+            <h1>Carta aberta para dona Evy</h1>
+            <p>
+                Mana Evy é uma pessoa muito especial para mim, vc é um tiquinho legal, é uma pessoa mto forte. 
+                <br><br>
+                Pelo oq vc me contou, tenho uma admiração imensa por você, aproveite seu dia na vdd o restinho dele kkkkk, te amo um pouquinho.
+            </p>
+            <button class="btn" onclick="showFinal()">Próximo</button>
+
+            <!-- Mensagem Final (Escondida até clicar no botão) -->
+            <div id="finalMessage" style="display: none;">
+                <span class="bouquet">🌷🌹🌸🌷🌹🌸</span>
+                <div class="final-message">Feliz seu dia</div>
+                <span class="bouquet">🌷🌹🌸🌷🌹🌸</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function goToPage2() {
+            // Esconde a página 1
+            document.getElementById('page1').style.display = 'none';
+            // Mostra a página 2
+            document.getElementById('page2').style.display = 'block';
+        }
+
+        function showFinal() {
+            // Esconde o botão "Próximo"
+            document.querySelector('#page2 .btn').style.display = 'none';
+            // Mostra a mensagem final
+            document.getElementById('finalMessage').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
